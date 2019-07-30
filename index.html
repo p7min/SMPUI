@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<title>SMP UI 2.0</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+	<link href="css/blog.css" rel="stylesheet">
+
+	<!-- JS File -->
+	<script src="js/datetime.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<header class="blog-header py-3">
+			<div class="row flex-nowrap justify-content-between align-items-center">
+				<div class="header-logo">
+					<img src="img/logo.png" alt="logo">
+				</div>
+				<div class="col-4 d-flex justify-content-end align-items-center">
+				</div>
+			</div>
+		</header>
+
+		<!-- 시계,요일 표시 스크립트 -->
+		<div class="col-md-6 px-0">
+			<p id="clock" class="display-4">
+				<script type="text/javascript">
+					window.onload = clock('clock');
+				</script>
+			</p>0
+			<p id="ko_date_time" class="lead my-3">
+				<script type="text/javascript">
+					window.onload = ko_date_time('ko_date_time');
+				</script>
+			</p>
+			<p id="en_date_time" class="lead my-3">
+				<script type="text/javascript">
+					window.onload = en_date_time('en_date_time');
+				</script>
+			</p>
+		</div>
+
+		<div class="row mb-2">
+			<div class="col-md-6">
+				Map
+			</div>
+			<div class="col-md-3">
+				국정홍보
+			</div>
+		</div>
+		<div class="row mb-2">
+			<div class="col-md-6">
+				mic
+			</div>
+		</div>
+
+		<div class="row mb-2">
+			<div class="col-md-6">
+				cam1
+			</div>
+			<div class="col-md-6">
+				cam2
+			</div>
+		</div>
+	</div>
+	<!-- ./contaniner-->
+</body>
+
+</html>
