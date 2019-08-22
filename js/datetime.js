@@ -128,6 +128,6 @@ function en_date_time(id) {
     }
     result = days[day] + " , " + months[month] + " " + d + " , " + year;
     document.getElementById(id).innerHTML = result;
-    setTimeout('_date_time("' + id + '");', "1000");
+    setTimeout('en_date_time("' + id + '");', "1000");
     return true;
 }
