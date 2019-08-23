@@ -13,14 +13,14 @@
     }
 }
 
+.header-logo {
+    height: 80px;
+}
+
+.blog-header {
+    padding-bottom: 1rem;
+}
+
 #map {
     height: 300px;
-}
-
-#dustdispay {
-    text-align: center;
-}
-
-.header-logo {
-    height: 100px;
 }

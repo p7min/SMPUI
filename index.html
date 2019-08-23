@@ -4,8 +4,9 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="">
-	<title>SMP UI 2.0</title>
+	<meta name="description" content="SMPUI">
+	<meta name="author" content="valuedata">
+	<title>SMP-UI 2.0</title>
 
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -20,24 +21,18 @@
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
 	<link href="css/blog.css" rel="stylesheet">
 	<!-- Custom JS File -->
-	<script src="js/datetime.js"></script>
-	<script src="js/map.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function () {
-			$(window).resize(function () {
-				$("iframe.can").height($(window).height() - 50);
-				$("iframe.cam").width($(window).width() - 50);
-			});
-		});
-	</script>
+	<script src="js/clock.js"></script>
+	<!-- <script src="js/map.js"></script>-->
+	<script type="text/javascript"
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=321325272de78653e1f2a930c9bdc782"></script>
+
 </head>
 
 <body>
 	<div class="container">
-		<header class="blog-header py-3">
+		<header class="blog-header py-2">
 			<div class="row flex-nowrap justify-content-between align-items-center">
 				<div class="header-logo">
-					<!-- 7.31 logo 파일 사이즈 수정 필요-->
 					<img src="img/logo.png" alt="logo" height="100%" width="100%">
 				</div>
 			</div>
@@ -63,47 +58,46 @@
 				</p>
 			</div>
 			<!--/. clock, date -->
-			<div class="lead col-lg-6">
-				<br>
-				<br>
-				<p class="lead my-3">
-					미세먼지 농도 :
-				</p>
-				<p class="laed my-3">
-					색깔
-				</p>
-			</div>
 		</div>
 		<div class="row lg-3">
-			<!-- google map -->
 			<div class="col-lg-6">
-				<div id="map">
-					window.onload = initMap();
-				</div>
-			</div>
-			<!-- Img carousel -->
-			<div class="col-lg-6">
-				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-					<div class="carousel-inner" role="listbox">
-						<div class="carousel-item active">
-							<img src="img/test1.jpg" alt="1st slide" style="width: 100%; height: 300px;">
-						</div>
-						<div class="carousel-item">
-							<img src="img/test.png" alt="2st slide" style="width: 100%; height: 300px;">
-						</div>
-					</div>
-				</div>
+				<a class="weatherwidget-io" href="https://forecast7.com/en/36d14128d11/gimcheon-si/"
+					data-label_1="GIMCHEON" data-label_2="WEATHER" data-theme="pure">GIMCHEON WEATHER</a>
+				<script>
+					!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = 'https://weatherwidget.io/js/widget.min.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'weatherwidget-io-js');
+				</script>
 			</div>
 		</div>
 
 		<div class="row lg-3">
-			<div class="col-lg-6" style="padding-top: 15px">
-				<iframe scrolling="no" src="cam1.html" frameborder="0" width="100%" height="800px;"></iframe>
+			<div class="col-lg-6" style="padding-top: 15px; width: 50%;">
+				<iframe scrolling="no" src="cam1.html" frameborder="0" width="100%" height="500px;"></iframe>
 			</div>
-			<div class="col-lg-6" style="padding-top: 15px">
-				<iframe scrolling="no" src="cam2.html" frameborder="0" width="100%" height="800px;"></iframe>
+			<div class="col-lg-6" style="padding-top: 15px; width: 50%;">
+				<iframe scrolling="no" src="cam2.html" frameborder="0" width="100%" height="600px;"></iframe>
 			</div>
 		</div>
+
+		<div class="col-lg-6">
+			<div id="map" style="width:500px;height:400px;">
+			</div>
+		</div>
+		<script>
+			var container = document.getElementById('map');
+			var options = {
+				center: new kakao.maps.LatLng(33.450701, 126.570667),
+				level: 3
+			};
+
+			var map = new kakao.maps.Map(container, options);
+		</script>
+
+		<!-- google map 
+		<div class="col-lg-6">
+			<div id="map">
+				window.onload = initMap();
+			</div>
+		</div> -->
 	</div>
 	<!-- ./contaniner-->
 
