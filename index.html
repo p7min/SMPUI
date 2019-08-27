@@ -8,7 +8,7 @@
 	<meta name="author" content="valuedata">
 	<title>SMP-UI 2.0</title>
 
-	<!-- Favicon -->
+	<!-- Favicon icon-->
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
 	<!-- Bootstrap core JavaScript -->
@@ -23,8 +23,8 @@
 	<!-- Custom JS File -->
 	<script src="js/clock.js"></script>
 	<!-- <script src="js/map.js"></script>-->
-	<script type="text/javascript"
-		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=321325272de78653e1f2a930c9bdc782"></script>
+	<!-- kakao map api key-->
+	<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=321325272de78653e1f2a930c9bdc782"></script>
 
 </head>
 
@@ -71,26 +71,18 @@
 
 		<div class="row lg-3">
 			<div class="col-lg-6" style="padding-top: 15px; width: 50%;">
-				<iframe scrolling="no" src="cam1.html" frameborder="0" width="100%" height="500px;"></iframe>
+				<iframe scrolling="no" src="cam2.html" frameborder="0" width="100%" height="300px;"></iframe>
 			</div>
 			<div class="col-lg-6" style="padding-top: 15px; width: 50%;">
-				<iframe scrolling="no" src="cam2.html" frameborder="0" width="100%" height="600px;"></iframe>
+				<iframe scrolling="no" src="cam3.html" frameborder="0" width="100%" height="300px;"></iframe>
 			</div>
 		</div>
 
-		<div class="col-lg-6">
-			<div id="map" style="width:500px;height:400px;">
+		<div class="row lg-3">
+			<div class="col-lg-6">
+				<div id="map" style="width:510px;height:400px;"></div>
 			</div>
 		</div>
-		<script>
-			var container = document.getElementById('map');
-			var options = {
-				center: new kakao.maps.LatLng(33.450701, 126.570667),
-				level: 3
-			};
-
-			var map = new kakao.maps.Map(container, options);
-		</script>
 
 		<!-- google map 
 		<div class="col-lg-6">
@@ -101,9 +93,33 @@
 	</div>
 	<!-- ./contaniner-->
 
-	<!-- Google Map Api -->
+	<!-- Google Map Api KEY-->
 	<script async defer
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlO6IrHH7guoH0cBMZKINxppnEuZkkjyI&callback=initMap"> </script>
+	<!-- kakao Map javascript-->
+	<script>
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+			mapOption = {
+				center: new kakao.maps.LatLng(37.6693, 126.7457), // 지도의 중심좌표
+				level: 4, // 지도의 확대 레벨
+				mapTypeId: kakao.maps.MapTypeId.ROADMAP // 지도종류
+			};
+
+		// 지도를 생성한다 
+		var map = new kakao.maps.Map(mapContainer, mapOption);
+		// 마우스 드래그와 모바일 터치를 이용한 지도 이동을 막는다
+		map.setDraggable(false);
+
+		// 마우스 휠과 모바일 터치를 이용한 지도 확대, 축소를 막는다
+		map.setZoomable(false);
+
+		// 지도에 마커를 생성하고 표시한다
+		var marker = new kakao.maps.Marker({
+			position: new kakao.maps.LatLng(37.6693, 126.7457), // 마커의 좌표
+			map: map // 마커를 표시할 지도 객체
+		});
+	</script>
+	<!-- ./kakao Map javascript-->
 </body>
 
 </html>

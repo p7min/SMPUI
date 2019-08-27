@@ -13,6 +13,19 @@
     }
 }
 
+body {
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    max-width: 100%;
+    width: 100%;
+    height: -webkit-fill-available;
+    font-family: Arial, Helvetica, nanumgothic;
+}
+
 .header-logo {
     height: 80px;
 }
