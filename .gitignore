@@ -7,4 +7,3 @@ node_modules/
 *.lock
 *.json
 .eslintrc.js
-g

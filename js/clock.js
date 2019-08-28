@@ -75,22 +75,31 @@ function en_date_time(id) {
   year = date.getFullYear();
   month = date.getMonth();
   months = new Array(
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
+    'January',
+    'February',
+    'March',
+    'April',
     'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
   );
   d = date.getDate();
   day = date.getDay();
-  days = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Sat', 'Sun');
+  days = new Array(
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+    'Sunday',
+  );
   h = date.getHours();
   if (h < 10) {
     h = `0${h}`;
@@ -103,7 +112,7 @@ function en_date_time(id) {
   if (s < 10) {
     s = `0${s}`;
   }
-  result = `${days[day]} , ${months[month]} ${d} , ${year}`;
+  result = `${days[day]}, ${months[month]} ${d}, ${year}`;
   document.getElementById(id).innerHTML = result;
   setTimeout(`en_date_time("${id}");`, '1000');
   return true;

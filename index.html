@@ -9,36 +9,38 @@
 	<title>SMP-UI 2.0</title>
 
 	<!-- Favicon icon-->
-	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+	<link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+	<link href="img/favicon.ico" rel="icon" type="image/x-icon">
 	<!-- Bootstrap core JavaScript -->
 	<script src="jquery/jquery.min.js"></script>
 	<script src="js/bootstrap.bundle.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script>
 	<!-- Bootstrap core CSS -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<!-- Custom styles for this template -->
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
-	<link href="css/blog.css" rel="stylesheet">
+	<link href="css/blog.css" rel="stylesheet" type="text/css">
 	<!-- Custom JS File -->
 	<script src="js/clock.js"></script>
 	<!-- <script src="js/map.js"></script>-->
-	<!-- kakao map api key-->
+	<!-- KakaoMap Api Key-->
 	<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=321325272de78653e1f2a930c9bdc782"></script>
-
+	<!-- Google Map Api Key
+	<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlO6IrHH7guoH0cBMZKINxppnEuZkkjyI&callback=initMap"> </script>-->
 </head>
 
-<body>
+<body onselectstart="return false" oncontextmenu="return false" ondragstart="return false">
 	<div class="container">
 		<header class="blog-header py-2">
 			<div class="row flex-nowrap justify-content-between align-items-center">
 				<div class="header-logo">
-					<img src="img/logo.png" alt="logo" height="100%" width="100%">
+					<img src="img/logo.png" alt="logo">
 				</div>
 			</div>
 		</header>
 
-		<div class="row lg-3">
+		<div class=" text-row lg-3">
 			<!-- clock, date -->
 			<div class="col-lg-6">
 				<p id="clock" class="display-4">
@@ -62,7 +64,7 @@
 		<div class="row lg-3">
 			<div class="col-lg-6">
 				<a class="weatherwidget-io" href="https://forecast7.com/en/36d14128d11/gimcheon-si/"
-					data-label_1="GIMCHEON" data-label_2="WEATHER" data-theme="pure">GIMCHEON WEATHER</a>
+					data-label_1="GIMCHEON" data-label_2="WEATHER">GIMCHEON WEATHER</a>
 				<script>
 					!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = 'https://weatherwidget.io/js/widget.min.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'weatherwidget-io-js');
 				</script>
@@ -70,20 +72,19 @@
 		</div>
 
 		<div class="row lg-3">
-			<div class="col-lg-6" style="padding-top: 15px; width: 50%;">
-				<iframe scrolling="no" src="cam2.html" frameborder="0" width="100%" height="300px;"></iframe>
+			<div class="cam col-lg-6">
+				<iframe scrolling="no" src="cam2.html"></iframe>
 			</div>
-			<div class="col-lg-6" style="padding-top: 15px; width: 50%;">
-				<iframe scrolling="no" src="cam3.html" frameborder="0" width="100%" height="300px;"></iframe>
+			<div class="cam col-lg-6">
+				<iframe scrolling="no" src="cam3.html"></iframe>
 			</div>
 		</div>
 
 		<div class="row lg-3">
 			<div class="col-lg-6">
-				<div id="map" style="width:510px;height:400px;"></div>
+				<div id="map"></div>
 			</div>
 		</div>
-
 		<!-- google map 
 		<div class="col-lg-6">
 			<div id="map">
@@ -92,11 +93,7 @@
 		</div> -->
 	</div>
 	<!-- ./contaniner-->
-
-	<!-- Google Map Api KEY-->
-	<script async defer
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlO6IrHH7guoH0cBMZKINxppnEuZkkjyI&callback=initMap"> </script>
-	<!-- kakao Map javascript-->
+	<!-- kakao Map JavaScript-->
 	<script>
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 			mapOption = {
@@ -119,7 +116,7 @@
 			map: map // 마커를 표시할 지도 객체
 		});
 	</script>
-	<!-- ./kakao Map javascript-->
+	<!-- ./kakao Map JavaScript-->
 </body>
 
 </html>
